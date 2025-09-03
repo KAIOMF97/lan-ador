@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'StarJedi';
+    src: url('Starjedi.ttf') format('truetype');
+}
+
+body, h1, p, label, button, input, #spanSituacao {
+    font-family: 'StarJedi', sans-serif;
+    letter-spacing: 2px;  /* espaço entre letras para estilo mais épico */
+}
+
+/* Fundo espacial com estrelas */
+body {
+    font-family: 'Orbitron', Arial, sans-serif;
+    text-align: center;
+    background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Efeito de estrelas animadas no fundo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    opacity: 0.3;
+    animation: estrelas 60s linear infinite;
+    z-index: -1;
+}
+@keyframes estrelas {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 5000px; }
+}
+
+/* Título com glow */
+h1 {
+    font-size: 3rem;
+    color: #ffe81f; /* amarelo Star Wars */
+    margin: 20px 0;
+}
+
+input[type="number"]:focus {
+    border-color: #ff0;
+    box-shadow: 0 0 10px #ff0;
+}
+
+button:hover, input[type="button"]:hover {
+    background: #ff0;
+    box-shadow: 0 0 15px #ff0, 0 0 25px #fc0;
+}
+
+.grafico-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* espaço entre gráfico e informações */
+  margin-top: 20px;
+}
+
+#spanSituacao {
+  text-align: left;
+  max-width: 250px;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #555;
+  border-radius: 8px;
+}
+
+.tela-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;   /* ocupa toda a altura da tela */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.controles {
+  width: 20%;   /* inputs ocupam 20% da tela */
+  text-align: left;
+}
+
+.grafico-container {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+  width: 75%;   /* gráfico e resultados ocupam o resto */
+  height: 100%;
+}
+
+#canvasFoguete {
+  flex: 1;
+  max-height: 90vh;  /* garante que caiba na tela */
+  border: 1px solid #555;
+  background: black;
+}
+
+#spanSituacao {
+  width: 220px;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.lado-direito {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; /* centraliza a caixinha e os botões */
+}
+
+#spanSituacao {
+  width: 220px;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 70vh;
+  text-align: left;
+}
+
+.niveis button {
+  display: block;
+  margin: 5px 0;
+  width: 100px;
+}
+
+.botoes-principais {
+  display: flex;
+  gap: 10px;   /* espaço entre os botões */
+  margin-top: 10px;
+}

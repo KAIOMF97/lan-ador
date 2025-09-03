@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Lançamento Oblíquo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Simulador de Lançamento oblíquo</h1>
+    <p>
+        <b>Minijogo:</b> os parâmetros ajustar você deve, e os alvos do gráfico acertar tente!
+
+    </p>
+
+    <div class="tela-container">
+  <!-- Lado esquerdo: controles -->
+  <div class="controles">
+      <label for="massa">Massa (entre 1 e 100):</label>
+      <input type="number" id="massa"><br>
+
+      <label for="resistencia">Resistência do Ar (0 a 1):</label>
+      <input type="number" id="resistencia" step="0.01"><br>
+
+      <label for="velocidade">velocidade inicial (0 a 100 m/s):</label>
+      <input type="number" id="velocidade"><br>
+
+      <label for="angulo">Ângulo (1° a 90°):</label>
+      <input type="number" id="angulo"><br>
+
+      <label for="gravidade">Gravidade (1 a 30 m/s²):</label>
+      <input type="number" id="gravidade"><br>
+
+      <label for="alturaInicial">Altura inicial (0 a 100 m):</label>
+      <input type="number" id="alturaInicial"><br><br>
+
+     <div class="botoes-principais">
+  <input type="button" value="Calcular Trajetória" onclick="trajetoria()">
+  <button onclick="reiniciarJogo()">Reiniciar</button>
+</div>
+  </div>
+
+   <!-- Lado direito: gráfico + informações + níveis -->
+    <div class="grafico-container">
+      <canvas id="canvasFoguete" width="800" height="400"></canvas>
+      <div class="lado-direito">
+        <div id="spanSituacao">...</div>
+        <div class="niveis">
+          <button onclick="selecionarNivel(1)">Nível 1</button>
+          <button onclick="selecionarNivel(2)">Nível 2</button>
+          <button onclick="selecionarNivel(3)">Nível 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script src="calculos.js"></script>
+</body>
+</html>
